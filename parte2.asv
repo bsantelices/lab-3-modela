@@ -19,7 +19,6 @@ title('Respuesta al escalon');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'Respuesta al escalon.png')
 
 
 %Se analiza la respuesta al impulso
@@ -29,7 +28,6 @@ title('Respuesta al impulso');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'Respuesta al impulso.png')
 
 %Se analiza la respuesta al impulso
 t = linspace (0 , 12*pi , 5000);
@@ -42,7 +40,6 @@ title('Respuesta a u(t)');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'Respuesta a u(t).png')
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Parte 3 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -62,7 +59,6 @@ title('Discreto con T1 en tipo "Zero order hold"');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'3_1.png')
 
 
 %se discretisa el modelo continuo con T1 y el tipo foh 
@@ -73,7 +69,6 @@ title('Discreto con T1 en tipo "First order hold"');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'3_2.png')
 
 %%%%%%%%% T2
 
@@ -85,7 +80,6 @@ title('Discreto con T2 en tipo "Zero order hold"');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'3_3.png')
 
 %se discretisa el modelo continuo con T2 y el tipo foh 
 discreto4 = c2d (Modelo , T2 , 'foh');
@@ -95,29 +89,26 @@ title('Discreto con T2 en tipo "First order hold"');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'3_4.png')
 
 %%%%%%%%% T3
 
-%se discretisa el modelo continuo con T3 y el tipo zoh 
-discreto5 = c2d (Modelo , T3 , 'zoh');
+%se discretisa el modelo continuo con T2 y el tipo zoh 
+discreto3 = c2d (Modelo , T2 , 'zoh');
 figure
-step ( discreto5 );
-title('Discreto con T3 en tipo "Zero order hold"');
+step ( discreto3 );
+title('Discreto con T2 en tipo "Zero order hold"');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'3_5.png')
 
-%se discretisa el modelo continuo con T3 y el tipo foh 
-discreto6 = c2d (Modelo , T3 , 'foh');
+%se discretisa el modelo continuo con T2 y el tipo foh 
+discreto4 = c2d (Modelo , T2 , 'foh');
 figure
-step ( discreto6 );
-title('Discreto con T3 en tipo "First order hold"');
+step ( discreto4 );
+title('Discreto con T2 en tipo "First order hold"');
 xlabel('Tiempo');
 ylabel('Amplitud');
 grid on
-saveas(gcf,'3_6.png')
 
 
 
