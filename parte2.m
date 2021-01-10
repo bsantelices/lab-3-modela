@@ -1,8 +1,10 @@
+%Se reciben los parametros del modelo
 A1 = input("Ingrese el valor del area de la base del estaque A1: ");
 A2 = input("Ingrese el valor del area de la base del estaque A2: ");
 R1 = input("Ingrese el valor de R1: ");
 R2 = input("Ingrese el valor de R1: ");
 
+%Se definen las matrices, calculadas en el informe
 A = [-1/(R1*A1) 1/(R1*A1); 1/(R1*A2) -(R2+R1)/(R1*R2*A2)];
 B = [1/A1; 0];
 C = [1 0; 0 1];
@@ -31,7 +33,7 @@ ylabel('Amplitud');
 grid on
 saveas(gcf,'Respuesta al impulso.png')
 
-%Se analiza la respuesta al impulso
+%Se analiza la respuesta a u(t)
 t = linspace (0 , 12*pi , 5000);
 u = 100* sin( t /4);
 u (u <0) = 0.;

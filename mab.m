@@ -5,7 +5,7 @@ syms s
 
 aux = s*ident - A;
 auxInv = inv(aux);
-auxAux = C * auxInv;
+aux2 = C * auxInv;
 %Funcion de trasferencia
-H = auxAux*B;
+H = aux2*B;
 end

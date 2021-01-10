@@ -6,7 +6,7 @@ B = [a/b; 0];
 C = [1 0];
 D = [0];
 
+%Se genera el modelo
 Modelo = ss(A, B, C, 0)
-%step(Modelo)
 end
 
